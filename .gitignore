@@ -181,8 +181,10 @@ desktop.ini
 /wp-content/wflogs/
 /wp-content/nfwlog/
 /wp-content/debug.log
-
+# ======================
 # WooCommerce
+# ======================
+
 /wp-content/uploads/
 /wp-content/uploads/woocommerce_uploads/
 /wp-content/cache/woocommerce-*
