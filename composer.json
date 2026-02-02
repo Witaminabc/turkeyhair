@@ -1,0 +1,68 @@
+{
+    "name": "hair/wordpress",
+    "description": "WordPress hair сайт с управлением плагинами через Composer",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hair",
+            "email": "info@hair.by"
+        }
+    ],
+    "repositories":[
+        {
+            "name": "wpackagist",
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "johnpbloch/wordpress": "^6.0",
+        "composer/installers": "^2.0",
+
+        "wpackagist-plugin/akismet": "^5.6",
+        "wpackagist-plugin/contact-form-7": "^6.1",
+        "wpackagist-plugin/svg-support": "^2.5",
+        "wpackagist-plugin/wp-fastest-cache": "^1.4",
+        "wpackagist-plugin/breadcrumb-navxt": "^7.2",
+        "wpackagist-plugin/contact-form-cfdb7": "*",
+
+
+        "wpackagist-plugin/duplicator": "*"
+    },
+    "require-dev": {
+        "wp-cli/wp-cli": "^2.8"
+    },
+    "extra": {
+        "installer-paths": {
+            "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "wp-content/themes/{$name}/": ["type:wordpress-theme"],
+            "wp-content/mu-plugins/{$name}/": ["type:wordpress-mu-plugin"]
+        },
+        "wordpress-install-dir": "/"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "johnpbloch/wordpress-core-installer": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "platform-check": false
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "echo 'Установка завершена!'"
+        ],
+        "post-update-cmd": [
+            "echo 'Обновление завершено!'"
+        ]
+    }
+
+}
